@@ -1,4 +1,4 @@
-# wassermaendli
+# wassermandli
 
 The purpos of wassermandli is to compare different genes and identify possible gene duplications, pseudogenes of member of same gene families. No *a priori* knowledge is needed or used.
 
