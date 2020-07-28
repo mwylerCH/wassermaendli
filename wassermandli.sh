@@ -9,7 +9,7 @@ if [ "$1" == "-h" ]; then
 fi
 
 # check number of arguments
-if [ "$#" -ne 2 ]; then
+if [ "$#" -ne 3 ]; then
     echo -e "Illegal number of parameters! Run\n\t \e[1m`basename $0` -h\e[0m"
     exit 0
 fi
@@ -23,12 +23,13 @@ rm *.fai
  
 
 # file of interested gene
-GENES=$1
+GENES1=$1
+GENES2=$2
 # multifasta containing gene
-FASTA=$2
+FASTA=$3
 
 # make pairing file and remove pairs of same gene
-join -j 999999 -o 1.1,2.1 $GENES $GENES | perl -p -e 's/ /\t/g' | awk '{if($1 != $2) print $0}' > WATER_align/Pairs.txt
+join -j 999999 -o 1.1,2.1 $GENES1 $GENES2 | perl -p -e 's/ /\t/g' | awk '{if($1 != $2) print $0}' > WATER_align/Pairs.txt
 
 
 # read in and start LOOP
