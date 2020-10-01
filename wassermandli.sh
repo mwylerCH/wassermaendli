@@ -63,7 +63,7 @@ SCORE=`fgrep 'Score' tmp_WATER | sed 's/.*: //g'`
 
 
 ## write output
-echo -e $PRIMO'\t'$SECONDO'\t'$ID'\t'$SIM'\t'$GAP'\t'$SCORE
+echo "$PRIMO'\t'$SECONDO'\t'$ID'\t'$SIM'\t'$GAP'\t'$SCORE"
 
 # keep copy of alignment 
 OUT_NAME=`echo WATER_align/${PRIMO}_${SECONDO}`
